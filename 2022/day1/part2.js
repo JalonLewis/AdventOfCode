@@ -1,7 +1,7 @@
 const fs = require("fs");
 
 function main(text) {
-  text = text.split("\n");
+  text = text.split(""\n"");
   let calArray = [];
   let currentCal = 0;
   text.forEach((item) => {

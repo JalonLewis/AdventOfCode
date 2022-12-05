@@ -1,11 +1,12 @@
 const fs = require("fs");
+const splitLines = require("../../helperFunctions");
 
 function main(text) {
-  text = text.split("\n");
+  const lines = splitLines(text);
   let priority = 0;
-  for (let i = 0; i < text.length; i++) {
-    const comp1 = text[i].slice(0, text[i].length / 2);
-    const comp2 = text[i].slice(text[i].length / 2, text[i].length);
+  for (let i = 0; i < lines.length; i++) {
+    const comp1 = lines[i].slice(0, lines[i].length / 2);
+    const comp2 = lines[i].slice(lines[i].length / 2, lines[i].length);
 
     for (let i = 0; i < comp1.length; i++) {
       if (comp2.includes(comp1[i])) {
@@ -24,5 +25,4 @@ function main(text) {
   console.log(priority);
 }
 
-main(fs.readFileSync("./example.txt", { encoding: "utf-8" }));
 main(fs.readFileSync("./data.txt", { encoding: "utf-8" }));

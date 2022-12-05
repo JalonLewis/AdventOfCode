@@ -1,10 +1,11 @@
 const fs = require("fs");
+const splitLines = require("../../helperFunctions");
 
 function main(text) {
   let count = 0;
-  text = text.split("\n");
-  for (let i = 0; i < text.length; i++) {
-    let pair = text[i].split(",");
+  const lines = splitLines(text);
+  for (let i = 0; i < lines.length; i++) {
+    let pair = lines[i].split(",");
     let elf1 = pair[0].split("-");
     let elf2 = pair[1].split("-");
 
@@ -19,5 +20,4 @@ function main(text) {
   console.log(count);
 }
 
-main(fs.readFileSync("./example.txt", { encoding: "utf-8" }));
 main(fs.readFileSync("./data.txt", { encoding: "utf-8" }));

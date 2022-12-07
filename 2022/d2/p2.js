@@ -29,4 +29,4 @@ function main(text) {
   console.log(score);
 }
 
-main(fs.readFileSync("./data.txt", { encoding: "utf-8" }));
+main(fs.readFileSync("./input.txt", { encoding: "utf-8" }));

@@ -20,4 +20,4 @@ function main(text) {
   console.log(count);
 }
 
-main(fs.readFileSync("./data.txt", { encoding: "utf-8" }));
+main(fs.readFileSync("./input.txt", { encoding: "utf-8" }));
